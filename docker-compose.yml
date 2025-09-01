@@ -1,0 +1,10 @@
+services:
+  counter:
+    image: python:3.11-alpine
+    container_name: count_app
+    working_dir: /app
+    volumes:
+      - ./count.html:/app/index.html   
+    command: python -m http.server 8080
+    ports:
+      - "8080:8080"
